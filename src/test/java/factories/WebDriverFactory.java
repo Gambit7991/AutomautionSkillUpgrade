@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WebDriverFactory {
     public static String CHROME_DRIVER_PATH = Resources.getResource("chromedriver.exe").getPath();
 
+
+    // Replace with WebDriverManager
     public static WebDriver getChromeDriver(){
         final String CHROME_DRIVER_NAME = "chromedriver.exe";
         System.setProperty(CHROME_DRIVER_NAME, CHROME_DRIVER_PATH);

@@ -1,14 +1,21 @@
+package tests;
+
 import base_pages.LoginPage;
 import factories.WebDriverFactory;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
+import pojo.User;
+import properties.PropertyData;
+import properties.PropertyHandler;
 
 public class MainPageTests {
 
     private final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    @BeforeAll
+    void manageProperties() {
+        PropertyHandler.getData();
+    }
 
     @BeforeEach
     public void createDriver() {
@@ -34,6 +41,11 @@ public class MainPageTests {
 
     @Test
     public void login() {
+//        User user = User.builder()
+//                .email(PropertyData.email)
+//                .name(PropertyData.name)
+//                .password(PropertyData.pass)
+//                .build();
         Assertions.assertTrue(new LoginPage(driver.get())
                 .signIn()
                 .isSignedIn());

@@ -18,6 +18,8 @@ public abstract class BasePage {
     private final Duration TIME_OUT_SECONDS = Duration.ofSeconds(10);
     public WebDriver driver;
     public WebDriverWait wait;
+
+    // Delete property management from pages
     public static Properties properties = new Properties();
 
     public BasePage(WebDriver driver) {

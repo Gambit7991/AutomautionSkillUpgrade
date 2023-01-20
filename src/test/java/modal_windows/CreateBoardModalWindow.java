@@ -13,6 +13,8 @@ public class CreateBoardModalWindow extends BasePage {
     private WebElement boardTitle;
     @FindBy(xpath = "//button[@data-testid= 'create-board-submit-button']")
     private WebElement modalTitle;
+    @FindBy(xpath = "//div[contains(@id, 'create-board-select-visibility')]//div[contains(., 'Workspace')]")
+    private WebElement dropdown;
 
     public CreateBoardModalWindow(WebDriver driver){
         super(driver);
@@ -22,6 +24,7 @@ public class CreateBoardModalWindow extends BasePage {
 //TODO: Board visibility - ???? how to choose it, I thought through select but there is no select
     public BoardPage createBoard(){
         boardTitle.sendKeys(BoardPojoModalWindow.TITLE);
+        dropdown.click();
         isEnabled(modalTitle).click();
         return new BoardPage(driver);
     }

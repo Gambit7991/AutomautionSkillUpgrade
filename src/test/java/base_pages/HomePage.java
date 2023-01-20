@@ -31,6 +31,7 @@ public class HomePage extends BasePage {
         return new StringBuilder(email).delete(getStartDomainIndex(email), email.length()).toString();
     }
 
+    // Rework Strings with Emails
     private int getStartDomainIndex(String email) {
         for (int i = email.length() - 1; i >= 0; i--) {
             if (email.charAt(i) == '@') {
@@ -40,6 +41,7 @@ public class HomePage extends BasePage {
         throw new IllegalArgumentException();
     }
 
+    // Method name: clickSomeButton()
     public CreateBoardModalWindow createNewBoard(){
         createBoardArea.click();
         return new CreateBoardModalWindow(driver);

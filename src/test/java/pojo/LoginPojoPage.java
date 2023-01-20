@@ -3,6 +3,9 @@ package pojo;
 import base_pages.BasePage;
 import base_pages.PropertyName;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
 public class LoginPojoPage {

@@ -3,7 +3,7 @@ package base_pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pojo.LoginPojoPage;
+import pojo.UserData;
 
 public class LoginPage extends BasePage{
     private final String URL = "https://trello.com/login";
@@ -21,11 +21,11 @@ public class LoginPage extends BasePage{
         driver.get(URL);
     }
 
-    public HomePage signIn(){
-        sendStringKeys(emailField, LoginPojoPage.email);
+    public HomePage signIn(UserData user){
+        sendStringKeys(emailField, user.getEmail());
         continueBtn.click();
         waitVisibility(passwordField);
-        sendStringKeys(waitVisibility(passwordField), LoginPojoPage.password);
+        sendStringKeys(waitVisibility(passwordField), user.getPassword());
         submitBtn.click();
         return new HomePage(driver);
     }

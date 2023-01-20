@@ -1,18 +1,27 @@
 import base_pages.LoginPage;
-import factories.WebDriverFactory;
+import factories.UserFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import pojo.UserData;
 
 public class MainPageTests {
 
     private final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private UserData user = new UserData();
 
     @BeforeEach
     public void createDriver() {
-        driver.set(WebDriverFactory.getChromeDriver());
+        //WebDriverManager has been added
+        WebDriverManager.chromedriver().setup();
+        driver.set(new ChromeDriver(new ChromeOptions()));
+        //create user entity
+        user = UserFactory.getUser();
     }
 
     @AfterEach
@@ -25,17 +34,21 @@ public class MainPageTests {
     @Test
     public void createNewBoard() {
         Assertions.assertTrue(new LoginPage(driver.get())
-                .signIn()
-                .createNewBoard()
+                //user as a param for sign in method
+                .signIn(user)
+                .openCreateBoardModalWindow()
                 .createBoard()
                 .isBoardCreated()
-                .isDisplayed());
+                .isDisplayed()
+        );
     }
 
     @Test
     public void login() {
         Assertions.assertTrue(new LoginPage(driver.get())
-                .signIn()
-                .isSignedIn());
+                //user as a param for sign in method
+                .signIn(user)
+                .isSignedIn()
+        );
     }
 }

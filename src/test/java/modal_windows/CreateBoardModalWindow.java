@@ -16,10 +16,8 @@ public class CreateBoardModalWindow extends BasePage {
 
     public CreateBoardModalWindow(WebDriver driver){
         super(driver);
-//        driver.get(URL);
         waitVisibility(boardTitle);
     }
-//TODO: Board visibility - ???? how to choose it, I thought through select but there is no select
     public BoardPage createBoard(){
         boardTitle.sendKeys(BoardPojoModalWindow.TITLE);
         isEnabled(modalTitle).click();

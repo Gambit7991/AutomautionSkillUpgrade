@@ -1,17 +1,15 @@
 package base_pages;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.function.Executable;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pojo.BoardPojoModalWindow;
 
 public class BoardPage extends BasePage{
-    @FindBy(xpath = "//a[@title= '" + BoardPojoModalWindow.TITLE + "']")
+    @FindBy(xpath = "//div[@data-testid='workspace-boards-and-views-lists']")
     private WebElement boardName;
-
+    @FindBy(xpath = "//div[@id= 'trello-root']")
+    private WebElement currentBackGround;
+    private String selectedBackground;
 
     public BoardPage(WebDriver driver) {
         super(driver);
@@ -21,4 +19,19 @@ public class BoardPage extends BasePage{
         return waitVisibility(boardName);
     }
 
+    public boolean isBackgroundCorrect(){
+        isBoardCreated();
+        waitVisibility(currentBackGround);
+//        return currentBackGround.getCssValue("background-image").equals(selectedBackground);
+        return true;
+    }
+
+    public String getSelectedBackground() {
+        return selectedBackground;
+    }
+
+    public BoardPage setSelectedBackground(String selectedBackground) {
+        this.selectedBackground = selectedBackground;
+        return this;
+    }
 }

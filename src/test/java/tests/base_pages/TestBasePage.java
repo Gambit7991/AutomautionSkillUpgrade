@@ -18,15 +18,13 @@ public abstract class TestBasePage {
     public ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public UserData user = new UserData();
     public final Logger logger
-            = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("com.baeldung.foobar");
-    public HomePage homePage;
+            = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("com.baeldung.logback.tests");
 
     @BeforeEach
     public void preCondition() {
         WebDriverManager.chromedriver().setup();
         driver.set(new ChromeDriver(new ChromeOptions()));
         user = UserFactory.getUser();
-//        homePage = login();
     }
 
     @AfterEach

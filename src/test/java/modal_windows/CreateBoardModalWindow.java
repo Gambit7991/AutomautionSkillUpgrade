@@ -2,6 +2,7 @@ package modal_windows;
 
 import base_pages.BasePage;
 import base_pages.BoardPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,7 @@ public class CreateBoardModalWindow extends BasePage {
         super(driver);
         waitVisibility(boardTitle);
     }
+    @Step("creating board")
     public BoardPage createBoard(){
         boardTitle.sendKeys(BoardPojoModalWindow.TITLE);
         isEnabled(submitButton).click();

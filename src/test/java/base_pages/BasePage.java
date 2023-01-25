@@ -20,6 +20,8 @@ public abstract class BasePage {
         this.driver = driver;
         driver.manage().window().maximize();
         this.wait = new WebDriverWait(driver, TIME_OUT_SECONDS);
+//        ElementLocatorFactory factory = new DefaultElementLocatorFactory(driver);
+//        ElementDecorator decorator = new ElementDecorator(factory, driver);
         PageFactory.initElements(driver, this);
     }
 

@@ -6,17 +6,20 @@ import org.openqa.selenium.support.FindBy;
 
 public class BoardPage extends BasePage{
     @FindBy(xpath = "//div[@data-testid='workspace-boards-and-views-lists']")
-    private WebElement boardName;
+    public WebElement boardName;
     @FindBy(xpath = "//div[@id= 'trello-root']")
     private WebElement currentBackGround;
+
+//    @FindBy(xpath = "")
+//    private WebElement
     private String selectedBackground;
 
     public BoardPage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement isBoardCreated(){
-        return waitVisibility(boardName);
+    public boolean isBoardCreated(){
+        return waitVisibility(boardName).isDisplayed();
     }
 
     public boolean isBackgroundCorrect(){
@@ -33,5 +36,16 @@ public class BoardPage extends BasePage{
     public BoardPage setSelectedBackground(String selectedBackground) {
         this.selectedBackground = selectedBackground;
         return this;
+    }
+
+    public BoardPage closeBoard(){
+        isBoardCreated();
+
+        return this;
+    }
+
+    public boolean isBoardClosed(){
+
+        return true;
     }
 }

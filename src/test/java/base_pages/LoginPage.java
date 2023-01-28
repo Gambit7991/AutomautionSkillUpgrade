@@ -1,14 +1,15 @@
 package base_pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pojo.UserData;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
     private final String URL = "https://trello.com/login";
     @FindBy(xpath = "//input[@name= 'user' and @inputmode= 'email']")
-    private WebElement emailField ;
+    private WebElement emailField;
     @FindBy(xpath = "//input[@id= 'login' and @type= 'submit']")
     private WebElement continueBtn;
     @FindBy(xpath = "//input[@type= 'password']")
@@ -21,7 +22,8 @@ public class LoginPage extends BasePage{
         driver.get(URL);
     }
 
-    public HomePage signIn(UserData user){
+    @Step("Sign in")
+    public HomePage signIn(UserData user) {
         sendStringKeys(emailField, user.getEmail());
         continueBtn.click();
         waitVisibility(passwordField);

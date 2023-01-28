@@ -30,12 +30,6 @@
     <logger name="com.baeldung.logback.tests" level="DEBUG">
         <appender-ref ref="FILE" />
     </logger>
-<!--    <logger name="com.baeldung.logback" level="DEBUG" >-->
-<!--        <appender-ref ref="FILE" />-->
-<!--    </logger>-->
-<!--    <logger name="com.baeldung.foobar" level="DEBUG">-->
-<!--        <appender-ref ref="FILE" />-->
-<!--    </logger>-->
 
 
 </configuration>

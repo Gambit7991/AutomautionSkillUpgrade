@@ -38,5 +38,4 @@ public class ElementDecorator extends DefaultFieldDecorator {
         return CustomElement.class.isAssignableFrom(field.getType());
     }
 
-
 }

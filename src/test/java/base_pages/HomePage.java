@@ -20,7 +20,7 @@ public class HomePage extends BasePage {
     }
 
     public CreateBoardModalWindow openCreateBoardModalWindow(){
-        createBoardArea.click();
+        waitVisibility(createBoardArea).click();
         return new CreateBoardModalWindow(driver);
     }
 }

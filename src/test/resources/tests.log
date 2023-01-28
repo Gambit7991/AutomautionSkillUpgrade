@@ -34,3 +34,11 @@
 
 2023-01-25 03:52:38,751 INFO [main] c.b.l.tests [LoginTests.java:15] Login process finished
 
+2023-01-28 09:11:30,083 INFO [main] c.b.l.tests [BoardTests.java:35] Create new board custom background process started
+
+2023-01-28 09:11:41,911 INFO [main] c.b.l.tests [BoardTests.java:40] Create new board custom background process finished
+
+2023-01-28 09:11:47,066 INFO [main] c.b.l.tests [LoginTests.java:11] Login process started
+
+2023-01-28 09:12:25,215 INFO [main] c.b.l.tests [LoginTests.java:15] Login process finished
+

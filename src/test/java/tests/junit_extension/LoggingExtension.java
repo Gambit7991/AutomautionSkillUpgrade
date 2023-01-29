@@ -1,4 +1,4 @@
-package junit_extension;
+package tests.junit_extension;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

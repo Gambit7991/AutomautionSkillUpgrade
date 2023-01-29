@@ -1,6 +1,6 @@
 package factories;
 
-import base_pages.PropertyName;
+import utils.PropertyName;
 import pojo.UserData;
 import properties.PropertyManager;
 

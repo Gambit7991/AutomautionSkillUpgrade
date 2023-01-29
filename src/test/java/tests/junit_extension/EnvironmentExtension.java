@@ -1,4 +1,4 @@
-package junit_extension;
+package tests.junit_extension;
 
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.ExecutionCondition;

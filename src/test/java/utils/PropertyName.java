@@ -1,4 +1,4 @@
-package base_pages;
+package utils;
 
 public enum PropertyName {
     EMAIL,

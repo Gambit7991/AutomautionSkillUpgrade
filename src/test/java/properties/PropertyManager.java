@@ -1,6 +1,6 @@
 package properties;
 
-import base_pages.PropertyName;
+import utils.PropertyName;
 
 import java.io.FileReader;
 import java.io.IOException;

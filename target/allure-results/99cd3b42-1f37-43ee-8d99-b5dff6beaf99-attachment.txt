@@ -1,1 +1,0 @@
-Using chromedriver 109.0.5414.74 (resolved driver for Chrome 109)

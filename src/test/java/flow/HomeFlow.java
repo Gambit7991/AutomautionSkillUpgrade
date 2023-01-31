@@ -1,6 +1,7 @@
 package flow;
 
-import base_pages.HomePage;
+import pom.HomePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 public class HomeFlow extends BaseFlow {
@@ -11,13 +12,14 @@ public class HomeFlow extends BaseFlow {
         super(driver);
         init();
     }
-
+    @Step("HomeFlow.java checking if signed in")
     public boolean isSignedIn() {
-        return waitVisibility(homePage.boards).isDisplayed();
+        return waitVisibility(homePage.getBoards()).isDisplayed();
     }
 
+    @Step("BoardFlow.java getting board modal window to create a board")
     public BoardModalFlow getCreateBoardModalWindow() {
-        waitVisibility(homePage.createBoardArea).click();
+        waitVisibility(homePage.getCreateBoardArea()).click();
         return new BoardModalFlow(driver);
     }
 

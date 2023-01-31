@@ -1,5 +1,6 @@
 package flow;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,21 +24,25 @@ public class BaseFlow {
         this.wait = new WebDriverWait(driver, TIME_OUT_SECONDS);
         PageFactory.initElements(driver, this);
     }
-
+    @Step("BaseFlow.java send string keys has been called")
     public void sendStringKeys(WebElement element, String keys) {
         waitVisibility(element).sendKeys(keys);
 //        element.sendKeys(keys);
     }
 
-    public void selectById(int id, By xpath){
+    @Step("BaseFlow.java select by id has been called")
+    public void selectById(int id, By xpath) {
         Select select = new Select(driver.findElement(xpath));
         select.selectByIndex(id);
     }
 
+    @Step("BaseFlow.java wait visibility has been called")
     public WebElement waitVisibility(WebElement element) {
         return Assertions.assertDoesNotThrow(() -> wait.until(ExpectedConditions.visibilityOf(element)));
     }
-    public WebElement isEnabled(WebElement element){
+
+    @Step("BaseFlow.java is enabled has been called")
+    public WebElement isEnabled(WebElement element) {
         return Assertions.assertDoesNotThrow(() -> wait.until(ExpectedConditions.elementToBeClickable(element)));
     }
 }

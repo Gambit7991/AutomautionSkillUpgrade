@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 public class IFrame extends CustomElement{
     public IFrame(WebDriver driver, WebElement webElement) {
-        super(driver, webElement);
+        super(webElement, driver);
     }
 
     public IFrame switchTo(){

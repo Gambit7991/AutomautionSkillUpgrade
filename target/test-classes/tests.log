@@ -104,3 +104,23 @@
 
 2023-01-28 23:37:43,292 INFO [main] c.b.l.tests [ScreenshotExtension.java:25] createNewBoard -> working on screenshot...
 
+2023-01-28 23:39:11,043 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-28 23:39:11,066 INFO [main] c.b.l.tests [ScreenshotExtension.java:25] createNewBoard -> working on screenshot...
+
+2023-01-29 10:40:17,341 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-29 10:40:17,394 INFO [main] c.b.l.tests [ScreenshotExtension.java:25] createNewBoard -> working on screenshot...
+
+2023-01-29 10:42:13,515 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-29 10:42:13,520 INFO [main] c.b.l.tests [ScreenshotExtension.java:25] createNewBoard -> working on screenshot...
+
+2023-01-29 16:29:20,834 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-29 16:30:20,181 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-30 21:53:20,531 INFO [main] c.b.l.tests [ScreenshotExtension.java:31] afterTestExecution
+
+2023-01-30 21:53:20,537 INFO [main] c.b.l.tests [ScreenshotExtension.java:25] closeBoard -> working on screenshot...
+

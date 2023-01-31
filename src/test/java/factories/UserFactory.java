@@ -1,6 +1,6 @@
 package factories;
 
-import utils.PropertyName;
+import properties.PropertyName;
 import pojo.UserData;
 import properties.PropertyManager;
 

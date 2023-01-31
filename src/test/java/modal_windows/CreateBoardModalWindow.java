@@ -1,6 +1,6 @@
 package modal_windows;
 
-import base_pages.BasePage;
+import pom.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -13,7 +13,7 @@ public class CustomElement {
     protected WebDriverWait wait;
     public WebElement element;
 
-    public CustomElement(WebDriver driver, WebElement webElement) {
+    public CustomElement(WebElement webElement, WebDriver driver) {
         this.driver = driver;
         this.element = webElement;
         this.wait = new WebDriverWait(driver, TIME_OUT_SECONDS);

@@ -18,7 +18,7 @@ public class BoardModalFlow  extends BaseFlow {
 //TODO: Can not find a way to click on dropdown and choose an element
     @Step("creating board with custom visibility")
     public BoardFlow createBoard(int visibility) {
-        WebElement element = waitVisibility(driver.findElement(By.xpath("//*[@id=\"react-select-7-input\"]")));
+        WebElement element = waitVisibility(driver.findElement(By.xpath("//div[3]/div/section/div/form/div[3]/div/div/span")));
         element.click();
         switch (visibility) {
             case 1 -> waitVisibility(driver.findElement(By.xpath("//input[@id='react-select-3-option-1']"))).click();
@@ -28,6 +28,7 @@ public class BoardModalFlow  extends BaseFlow {
         boardModal.submitButton.click();
         return new BoardFlow(driver);
     }
+    @Step("BoardModalFlow.java starts work on board creating")
     public BoardFlow createBoard(){
         waitVisibility(boardModal.boardTitle).sendKeys(BoardPojoModalWindow.TITLE);
         boardModal.submitButton.click();

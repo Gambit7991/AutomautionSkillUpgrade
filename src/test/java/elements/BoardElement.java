@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class BoardElement extends CustomElement {
 
     public BoardElement(WebDriver driver, WebElement board) {
-        super(driver, board);
+        super(board,driver);
     }
 
     @Step("Get close board button")

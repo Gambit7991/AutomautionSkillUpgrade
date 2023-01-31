@@ -1,6 +1,6 @@
 package flow;
 
-import base_pages.LoginPage;
+import pom.LoginPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pojo.UserData;
@@ -15,12 +15,12 @@ public class LoginFlow extends BaseFlow{
         driver.get(URL);
     }
 
-    @Step("Sign in")
+    @Step("LoginFlow.java trying to sign in")
     public HomeFlow signIn(UserData user) {
-        sendStringKeys(loginPage.emailField, user.getEmail());
-        loginPage.continueBtn.click();
-        sendStringKeys(waitVisibility(loginPage.passwordField), user.getPassword());
-        loginPage.submitBtn.click();
+        sendStringKeys(loginPage.getEmailField(), user.getEmail());
+        loginPage.getContinueBtn().click();
+        sendStringKeys(waitVisibility(loginPage.getPasswordField()), user.getPassword());
+        loginPage.getSubmitBtn().click();
         return new HomeFlow(driver);
     }
 

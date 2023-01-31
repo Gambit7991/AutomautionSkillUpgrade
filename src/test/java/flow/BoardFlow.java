@@ -1,14 +1,14 @@
 package flow;
 
-import base_pages.BoardPage;
+import pom.BoardPage;
 import elements.BoardElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BoardFlow extends BaseFlow {
-
     private BoardPage board;
 
     private final List<BoardElement> boards = new ArrayList<>();
@@ -18,11 +18,12 @@ public class BoardFlow extends BaseFlow {
         super(driver);
         init();
     }
-
+    @Step("BoardFlow.java checking if board has been created")
     public boolean isBoardCreated() {
-        return waitVisibility(board.boardName).isDisplayed();
+        return waitVisibility(board.getBoardName()).isDisplayed();
     }
 
+    @Step("BoardFlow.java trying to close the board")
     public BoardFlow closeBoard() {
         isBoardCreated();
         setBoards();
@@ -32,14 +33,14 @@ public class BoardFlow extends BaseFlow {
                 .click();
         return this;
     }
-
+    @Step("BoardFlow.java checking if board has been closed")
     public boolean isBoardClosed() {
         driver.get("https://trello.com/b/Ua84IIX7/anotherone");
-        return board.rawBoardList.size() < boards.size();
+        return board.getRawBoardList().size() < boards.size();
     }
 
     private void setBoards() {
-        board.rawBoardList.forEach(el -> boards.add(new BoardElement(driver, el)));
+        board.getRawBoardList().forEach(el -> boards.add(new BoardElement(driver, el)));
     }
 
     private void init() {
